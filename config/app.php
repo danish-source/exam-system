@@ -33,6 +33,9 @@ if (!defined('CONTACT_FACEBOOK_URL')) {
 function url(string $path): string
 {
     $p = ltrim($path, '/');
+    if (str_starts_with($p, 'admin/')) {
+        $p = 'assets/' . $p;
+    }
     $b = rtrim(BASE_URL, '/');
     if ($b === '') {
         return '/' . $p;

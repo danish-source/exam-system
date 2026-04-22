@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-require_once __DIR__ . '/../includes/bootstrap.php';
-require_once __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+require_once __DIR__ . '/../../includes/auth.php';
 require_admin();
 
 $aid = (int) ($_GET['attempt'] ?? 0);
@@ -34,7 +34,7 @@ $stmt->execute([$aid]);
 $rows = $stmt->fetchAll();
 
 $pageTitle = 'Special attempt';
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../../includes/header.php';
 ?>
 <div class="card">
     <h1>Attempt #<?= (int) $attempt['id'] ?> — <?= h($attempt['test_title']) ?></h1>
@@ -82,5 +82,5 @@ require __DIR__ . '/../includes/header.php';
     <?php endif; ?>
 </div>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>
 

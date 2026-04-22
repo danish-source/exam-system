@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-require_once __DIR__ . '/../includes/bootstrap.php';
-require_once __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+require_once __DIR__ . '/../../includes/auth.php';
 require_admin();
 
 $testId = (int) ($_GET['id'] ?? 0);
@@ -53,7 +53,7 @@ $qs->execute([$testId]);
 $questions = $qs->fetchAll();
 
 $pageTitle = 'Special test questions';
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../../includes/header.php';
 ?>
 <div class="card">
     <h1>Special test: <?= h($test['title']) ?></h1>
@@ -112,4 +112,4 @@ require __DIR__ . '/../includes/header.php';
     <?php endif; ?>
 </div>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>

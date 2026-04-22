@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-require_once __DIR__ . '/../includes/bootstrap.php';
-require_once __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+require_once __DIR__ . '/../../includes/auth.php';
 require_admin();
 
 $filter = (int) ($_GET['category'] ?? 0);
@@ -22,7 +22,7 @@ $questions = $stmt->fetchAll();
 $cats = $pdo->query('SELECT id, name FROM categories ORDER BY name')->fetchAll();
 
 $pageTitle = 'Questions';
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../../includes/header.php';
 ?>
 <div class="card">
     <h1>Questions</h1>
@@ -74,4 +74,4 @@ require __DIR__ . '/../includes/header.php';
         </table>
     <?php endif; ?>
 </div>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>

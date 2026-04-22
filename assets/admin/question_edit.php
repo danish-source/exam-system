@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-require_once __DIR__ . '/../includes/bootstrap.php';
-require_once __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../../includes/bootstrap.php';
+require_once __DIR__ . '/../../includes/auth.php';
 require_admin();
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
@@ -72,7 +72,7 @@ $row = is_array($row) ? $row : [];
 
 $editId = (int) ($row['id'] ?? 0);
 $pageTitle = $editId > 0 ? 'Edit question' : 'Add question';
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../../includes/header.php';
 ?>
 <div class="card">
     <h1><?= $editId > 0 ? 'Edit question' : 'Add question' ?></h1>
@@ -125,4 +125,4 @@ require __DIR__ . '/../includes/header.php';
         <a class="btn secondary" href="<?= h(url('admin/questions.php')) ?>" style="margin-left:0.5rem">Cancel</a>
     </form>
 </div>
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>
